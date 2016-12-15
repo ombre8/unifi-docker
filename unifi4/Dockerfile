@@ -13,7 +13,7 @@ RUN echo "deb http://www.ubnt.com/downloads/unifi/debian unifi4 ubiquiti" > \
   apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
 
 RUN apt-get -q update && \
-  apt-get install -qy --force-yes unifi && \
+  apt-get install -qy --force-yes mongodb-server unifi && \
   apt-get -q clean && \
   rm -rf /var/lib/apt/lists/*
 
