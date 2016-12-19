@@ -28,6 +28,7 @@ EXPOSE 8080/tcp 8081/tcp 8443/tcp 8843/tcp 8880/tcp 3478/udp
 # USER nobody
 
 WORKDIR /var/lib/unifi
+RUN touch logs/server.log && touch /usr/lib/unifi/data/db/version
 
 ENTRYPOINT ["/usr/bin/java", "-Xmx1024M", "-jar", "/usr/lib/unifi/lib/ace.jar"]
 CMD ["start"]
